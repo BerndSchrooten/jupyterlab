@@ -244,11 +244,7 @@ namespace Private {
       WebSocket: WEBSOCKET,
       token: PageConfig.getToken(),
       appUrl: PageConfig.getOption('appUrl'),
-      appendToken:
-        typeof window === 'undefined' ||
-        (typeof process !== 'undefined' &&
-          process?.env?.JEST_WORKER_ID !== undefined) ||
-        URLExt.getHostName(pageBaseUrl) !== URLExt.getHostName(wsUrl),
+      appendToken: true,
       ...options,
       baseUrl,
       wsUrl
